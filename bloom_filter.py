@@ -2,17 +2,17 @@ from numpy import zeros
 from random import randint
 
 K = 8
-NUMBER_OF_KMERS = 8
 BLOOM_FILTER_CAPACITY = 64
 NUMBER_OF_HASH_FUNCTIONS = 4
 NUMBER_OF_KMERS_IN_COLLECTION = 8
 
+#Hash XOR >> shift function
 def kmer_hash(encoded_kmer:int, shift:int):
     shifted_kmer = encoded_kmer >> shift
     hashed_kmer = encoded_kmer^shifted_kmer
     return hashed_kmer
 
-
+#Bloom Filter class
 class BloomFilter:
     def __init__(self, m:int, k:int):
         self.k = k #number of hash functions
@@ -33,7 +33,7 @@ class BloomFilter:
             i+=1
         return is_a_match
 
-
+#Randomly generated kmer list to populate bloom filter
 def generate_kmer_list(kmer_number:int, k=K):
     kmer_list = []
     for i in range(kmer_number):
