@@ -14,9 +14,10 @@ The goal of this code is to check if a K-mer exists in a collection by using a B
 
 Guide :
 
-_kmer_hash function_ : hash function using the XOR>>shift principle. Different hash functions are provided to the Bloom filter by using different shift values
-_BloomFilter class_ : 
+* _kmer_hash function_ : hash function using the XOR>>shift principle. Different hash functions are provided to the Bloom filter by using different shift values
+
+* _BloomFilter class_ : 
   * attributes : capacity, number of hash functions, bit array
   * methods : populate bloom filter using list of K-mers, check if new K-mer matches the collection
 
-_generate_kmer_list function_ : randomly generates a list of K-mers, each K-mer being represented by an integer
+* _generate_kmer_list function_ : randomly generates a list of K-mers, each K-mer being represented by an integer
