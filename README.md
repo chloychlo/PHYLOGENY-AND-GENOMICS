@@ -18,4 +18,5 @@ _kmer_hash function_ : hash function using the XOR>>shift principle. Different h
 _BloomFilter class_ : 
   * attributes : capacity, number of hash functions, bit array
   * methods : populate bloom filter using list of K-mers, check if new K-mer matches the collection
+
 _generate_kmer_list function_ : randomly generates a list of K-mers, each K-mer being represented by an integer
