@@ -13,6 +13,7 @@ The goal of this code is to check if a K-mer exists in a collection by using a B
 - Check if the K-mer can be the collection or not
 
 Guide :
+
 _kmer_hash function_ : hash function using the XOR>>shift principle. Different hash functions are provided to the Bloom filter by using different shift values
 _BloomFilter class_ : 
   * attributes : capacity, number of hash functions, bit array
