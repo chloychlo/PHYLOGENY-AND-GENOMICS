@@ -6,7 +6,7 @@ This repository contains computational approaches to genomic sequence analysis.
 **bloom_filter.py**
 
 The goal of this code is to check if a K-mer exists in a collection by using a Bloom Filter.
-- Define hash function
+- Define hash functions
 - Create an empty Bloom Filter
 - Populate the Bloom Filter with a randomly generated list of K-mers
 - Generate a new K-mer
