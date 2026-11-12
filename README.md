@@ -1,23 +1,24 @@
-# Phylogeny and genomics
+# Genomic Alignment-Free & K-mer Analysis Toolset
 
-This repository contains computational approaches to genomic sequence analysis.
+## 📋 Project Overview
+This project explores **alignment-free sequence analysis** and probabilistic data structures for genomics and phylogenetics. Traditional sequence alignment can be computationally expensive for massive genomic datasets; this repository implements alternative, high-performance approaches using $k$-mer decomposition, Jaccard distance metrics, and Bloom filters for efficient sequence membership and comparison.
 
-## Bloom filter 
-**bloom_filter.py**
+---
 
-The goal of this code is to check if a K-mer exists in a collection by using a Bloom Filter.
-- Define hash functions
-- Create an empty Bloom Filter
-- Populate the Bloom Filter with a randomly generated list of K-mers
-- Generate a new K-mer
-- Check if the K-mer can be the collection or not
+## Repos Structure
 
-Guide :
+```text
+genomics-kmer-phylogeny/
+├── src/                     # Core source code modules
+│   ├── __init__.py
+│   ├── bloom_filter.py      # Probabilistic data structure for k-mer membership
+│   ├── kmer_analysis.py     # Extraction and manipulation of k-mers from DNA sequences
+│   └── genome_distance.py   # Alignment-free distance metrics (e.g., Jaccard distance)
+├── requirements.txt         # Project Python dependencies
+└── README.md                # Project documentation
+```
 
-* _kmer_hash function_ : hash function using the XOR>>shift principle. Different hash functions are provided to the Bloom filter by using different shift values
-
-* _BloomFilter class_ : 
-  * attributes : capacity, number of hash functions, bit array
-  * methods : populate bloom filter using list of K-mers, check if new K-mer matches the collection
-
-* _generate_kmer_list function_ : randomly generates a list of K-mers, each K-mer being represented by an integer
+## Core Modules (src/)
+* **kmer_analysis.py**: Sliding-window $k$-mer extraction from biological DNA strings and numerical encoding representations.
+* **genome_distance.py**: Genome comparison tool calculating Jaccard distances derived from $k$-mer set intersections and unions.
+* **bloom_filter.py**: Implements a Bloom filter tailored for testing $k$-mer presence in large sequence collections without storing full datasets in memory.
