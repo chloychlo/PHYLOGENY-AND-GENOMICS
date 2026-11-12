@@ -1,5 +1,5 @@
-from numpy import zeros
 from random import randint
+from numpy import zeros
 
 K = 8
 BLOOM_FILTER_CAPACITY = 64
@@ -42,23 +42,23 @@ def generate_kmer_list(kmer_number:int, k=K):
 
 
 
+if __name__ == "__main__":
+    generated_kmer_collection = generate_kmer_list(NUMBER_OF_KMERS_IN_COLLECTION, K)
+    print(f'Randomly generated list of K-mers: {generated_kmer_collection}')
 
-generated_kmer_collection = generate_kmer_list(NUMBER_OF_KMERS_IN_COLLECTION, K)
-print(f'Randomly generated list of K-mers: {generated_kmer_collection}')
+    bloom_filter = BloomFilter(BLOOM_FILTER_CAPACITY,NUMBER_OF_HASH_FUNCTIONS)
 
-bloom_filter = BloomFilter(BLOOM_FILTER_CAPACITY,NUMBER_OF_HASH_FUNCTIONS)
+    for kmer in generated_kmer_collection :
+        BloomFilter.populate_bloom_filter(bloom_filter, kmer)
 
-for kmer in generated_kmer_collection :
-    BloomFilter.populate_bloom_filter(bloom_filter, kmer)
+    print(f'Bloom filter populated with collection : {bloom_filter.bit_array}')
 
-print(f'Bloom filter populated with collection : {bloom_filter.bit_array}')
+    new_kmer = generated_kmer_collection[2]
+    print(f'Testing match with K-mer : {new_kmer}')
 
-new_kmer = generated_kmer_collection[2]
-print(f'Testing match with K-mer : {new_kmer}')
+    is_a_match = BloomFilter.match_kmer(bloom_filter, new_kmer)
 
-is_a_match = BloomFilter.match_kmer(bloom_filter, new_kmer)
-
-if is_a_match:
-    print('New K-mer is likely to be in the collection.')
-else :
-    print('New K-mer is not in the collection.')
+    if is_a_match:
+        print('New K-mer is likely to be in the collection.')
+    else :
+        print('New K-mer is not in the collection.')
