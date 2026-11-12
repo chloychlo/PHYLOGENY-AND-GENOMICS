@@ -1,7 +1,7 @@
 # Genomic Alignment-Free & K-mer Analysis Toolset
 
 ## Project Overview
-This project explores **alignment-free sequence analysis** and probabilistic data structures for genomics and phylogenetics. Traditional sequence alignment can be computationally expensive for massive genomic datasets; this repository implements alternative, high-performance approaches using $k$-mer decomposition, Jaccard distance metrics, and Bloom filters for efficient sequence membership and comparison.
+This project explores sequence analysis** and probabilistic data structures for genomics. Traditional sequence alignment can be computationally expensive for massive genomic datasets; this repository implements high-performance approaches using k-mer decomposition, Jaccard distance metrics, and Bloom filtersn.
 
 ---
 
